@@ -33,13 +33,26 @@ uv sync
 
 ## Running the API
 
-Locally serve the Fast API with:
+### Locally serve the Fast API with:
 
 ```
 uv run src/main.py
 ```
 
-The API will be accessible at http://127.0.0.1:5000.
+### Run Fast API in docker container with: 
+
+```
+# build the image
+docker compose build
+
+# run the container
+docker compose up
+
+# do both
+docker compose up --build
+```
+
+The API will be accessible at http://localhost.
 
 ## Contributing
 
