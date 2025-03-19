@@ -1,18 +1,9 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
-from src.routers.health import health_router
-from src.routers.mtcars import data_output
+from routers.health import health_router
+from routers.mtcars import data_output
+from docs.documentation import description
 import uvicorn
-import tomllib
-
-# Import pyproject toml info using tomllib
-try:
-    with open("pyproject.toml", "rb") as f:
-        tomldata = tomllib.load(f)
-        version = tomldata["project"]["version"]
-        description = tomldata["project"]["description"]
-except FileNotFoundError:
-    print("pyproject.toml not found")
 
 app = FastAPI(
     # This info goes directly into /docs
@@ -20,7 +11,7 @@ app = FastAPI(
     # Description of API defined in docs/documentation.py for ease of reading
     description=description,
     summary="This project is a proof-of-concept (POC) web API built using the FastAPI library.",
-    version=version,
+    version="0.0.1",
     contact={
         "name": "RMI",
         "url": "https://github.com/RMI",
