@@ -1,103 +1,65 @@
-# web-api-poc
-[![Test Status](https://github.com/RMI/web-api-poc/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/test.yml)
-[![Docker](https://github.com/RMI/web-api-poc/actions/workflows/docker-build-and-push.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/docker-build-and-push.yml)
-[![Lint](https://github.com/RMI/web-api-poc/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/lint.yml)
+# WebAPI and Database Proof-of-Concept (poc)
 
-This project is a proof-of-concept (POC) web API built using the FastAPI library.
+[![Test DB service](https://github.com/RMI/web-api-poc/actions/workflows/db-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/db-test.yml)
 
-## Set-Up
+[![Lint API Service](https://github.com/RMI/web-api-poc/actions/workflows/api-lint.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-lint.yml)
+[![Test API service](https://github.com/RMI/web-api-poc/actions/workflows/api-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-test.yml)
 
-### Prerequisites
+[![Test service integration](https://github.com/RMI/web-api-poc/actions/workflows/integration-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/integration-test.yml)
+[![Docker](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml)
 
-This project uses [uv](https://github.com/astral-sh/uv) for environment and dependency management.
+This project is a proof-of-concept (POC) web API built using the FastAPI library. It is designed to demonstrate the integration of a web API with a database service, including basic CRUD operations and API key authentication.
 
-To install, follow the [official installation guide](https://github.com/astral-sh/uv?tab=readme-ov-file#installation).
+## Running the application
 
 ### Setup
 
 1. Clone the Repo
 
-```
+```sh
 git clone https://github.com/RMI/web-api-poc
 cd web-api-poc
 ```
 
-2. Create and Activate the Virtual Environment
-```
-uv venv .venv
-source .venv/bin/activate # macOS/Linux
-```
-
-3. Install Dependencies
-```
-uv sync
+2. Create an `.env` file to store the desired API key, (internal) API port, and DB port.
+```sh
+cp .env.example .env
 ```
 
-## Running the API
+### Run the services with docker compose
 
-### Locally serve the Fast API with:
-
-```
-uv run main.py
-```
-
-### Run Fast API in docker container with: 
-
-```
+```sh
 # build the image
 docker compose build
 
 # run the container
-docker compose up
+docker compose up --detach
 
 # do both
-docker compose up --build
+docker compose up --detach --build
 ```
 
-The API will be accessible at http://localhost.
+The API and API documentation (Swagger) will be accessible at http://localhost:8000.
 
-## Contributing
+### Make a request from the API
 
-### Dependency Management
-
-Dependencies are managed using uv. To add a new library, run:
-
-```
-uv add <library>
-```
-
-### Testing
- 
-Testing is implemented using the `pytest` library. Run all tests locally with:
-
-```
-uv run pytest
+```sh
+curl -X 'GET' \
+  'http://localhost:8000/scenarios' \
+  -H 'accept: application/json' \
+  -H 'X-API-Key: abc123'
 ```
 
-Or, you can run specific test suites with:
+Defaults to the API key "abc123", but an alternate key (matching what is in your `.env` file) can be input and submitted on the page.
+
+### Shutdown the docker container
+
+```sh
+docker compose down
+
+# also delete the database volume when shutting down the container
+docker compose down --volumes
 ```
-uv run pytest tests/test_unit.py        # to only run unit tests
-uv run pytest tests/test_integration.py # to only run integration tests
-```
-
-For test-only dependencies, add them using:
-``` 
-uv add --dev <library>
-```
-
-### Linting
-
-This project follows the [black](https://github.com/psf/black) code formatting standard. Lint code by running:
-
-```
-black path/to/file.py # to lint a single file
-black .               # to lint the entire directory
-```
-
-Ensure that your code is properly formatted before submitting a pull request.
-
-### Deployment
-**TODO**
 
 ## License
  This project is licensed under the [MIT License](LICENSE.txt) 
