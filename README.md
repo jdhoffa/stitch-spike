@@ -1,12 +1,12 @@
 # 🪡 Stitch
 
-[![Test DB service](https://github.com/RMI/web-api-poc/actions/workflows/db-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/db-test.yml)
+[![Test DB service](https://github.com/RMI/stitch-spike/actions/workflows/db-test.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/db-test.yml)
 
-[![Lint API Service](https://github.com/RMI/web-api-poc/actions/workflows/api-lint.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-lint.yml)
-[![Test API service](https://github.com/RMI/web-api-poc/actions/workflows/api-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-test.yml)
+[![Lint API Service](https://github.com/RMI/stitch-spike/actions/workflows/api-lint.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/api-lint.yml)
+[![Test API service](https://github.com/RMI/stitch-spike/actions/workflows/api-test.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/api-test.yml)
 
-[![Test service integration](https://github.com/RMI/web-api-poc/actions/workflows/integration-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/integration-test.yml)
-[![Docker](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml)
+[![Test service integration](https://github.com/RMI/stitch-spike/actions/workflows/integration-test.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/integration-test.yml)
+[![Docker](https://github.com/RMI/stitch-spike/actions/workflows/api-docker-build-and-push.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/api-docker-build-and-push.yml)
 
 Stitch is a platform that integrates diverse oil & gas asset datasets, applies AI-driven enrichment with human review, and delivers curated, trustworthy data.
 

@@ -1,8 +1,8 @@
 # WebAPI and database proof of concept (poc) - API service
 
-[![Test Status](https://github.com/RMI/web-api-poc/actions/workflows/api-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-test.yml)
-[![Docker](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml)
-[![Lint](https://github.com/RMI/web-api-poc/actions/workflows/api-lint.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-lint.yml)
+[![Test Status](https://github.com/RMI/stitch-spike/actions/workflows/api-test.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/api-test.yml)
+[![Docker](https://github.com/RMI/stitch-spike/actions/workflows/api-docker-build-and-push.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/api-docker-build-and-push.yml)
+[![Lint](https://github.com/RMI/stitch-spike/actions/workflows/api-lint.yml/badge.svg?branch=main)](https://github.com/RMI/stitch-spike/actions/workflows/api-lint.yml)
 
 This directory (`api/`) contains the API service for the WebAPI proof of concept repository (poc).
 
@@ -21,8 +21,8 @@ To install, follow the [official installation guide](https://github.com/astral-s
 1. Clone the Repo
 
 ```sh
-git clone https://github.com/RMI/web-api-poc
-cd web-api-poc/api
+git clone https://github.com/RMI/stitch-spike
+cd stitch-spike/api
 
 2. Create and Activate the Virtual Environment
 
