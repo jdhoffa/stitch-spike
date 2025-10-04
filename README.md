@@ -1,4 +1,4 @@
-# WebAPI and Database Proof-of-Concept (poc)
+# 🪡 Stitch
 
 [![Test DB service](https://github.com/RMI/web-api-poc/actions/workflows/db-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/db-test.yml)
 
@@ -8,7 +8,9 @@
 [![Test service integration](https://github.com/RMI/web-api-poc/actions/workflows/integration-test.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/integration-test.yml)
 [![Docker](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml/badge.svg?branch=main)](https://github.com/RMI/web-api-poc/actions/workflows/api-docker-build-and-push.yml)
 
-This project is a proof-of-concept (POC) web API built using the FastAPI library. It is designed to demonstrate the integration of a web API with a database service, including basic CRUD operations and API key authentication.
+Stitch is a platform that integrates diverse oil & gas asset datasets, applies AI-driven enrichment with human review, and delivers curated, trustworthy data.
+
+> **Note:** This repository represents an **early-stage spike / MVP**. It is intended to **test technical assumptions and validate architecture quickly**, not to serve as the final production implementation. Code and structure may change substantially as the design matures.
 
 ## Running the application
 
@@ -17,8 +19,8 @@ This project is a proof-of-concept (POC) web API built using the FastAPI library
 1. Clone the Repo
 
 ```sh
-git clone https://github.com/RMI/web-api-poc
-cd web-api-poc
+git clone https://github.com/RMI/stitch-spike
+cd stitch-spike
 ```
 
 2. Create an `.env` file to store the desired API key, (internal) API port, and DB port.
@@ -29,17 +31,17 @@ cp .env.example .env
 ### Run the services with docker compose
 
 ```sh
-# build the image
+# build the images
 docker compose build
 
-# run the container
+# run the containers
 docker compose up --detach
 
 # do both
 docker compose up --detach --build
 ```
 
-The API and API documentation (Swagger) will be accessible at http://localhost:8000.
+The API and API documentation will be accessible at http://localhost:8000.
 
 ### Make a request from the API
 
