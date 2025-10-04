@@ -475,7 +475,7 @@ wheels = [
 ]
 
 [[package]]
-name = "web-api-poc"
+name = "stitch-spike"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

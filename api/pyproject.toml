@@ -1,5 +1,5 @@
 [project]
-name = "web_api_poc"
+name = "stitch_spike"
 version = "0.1.0"
 description = "A proof of concept API (poc)"
 readme = "README.md"

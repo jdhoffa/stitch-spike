@@ -25,7 +25,7 @@ jobs:
       - name: Set ENV vars
         shell: bash
         run: |
-          cp example.env .env
+          cp .env.example .env
 
       - name: Build and start container (as backing service)
         shell: bash

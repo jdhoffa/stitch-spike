@@ -4,13 +4,13 @@ services:
     build:
       context: api
     environment:
-      - POC_API_KEY=${POC_API_KEY:-abc123}
-      - POC_API_PORT=${POC_API_PORT:-8000}
-      - POC_API_LOG_LEVEL=${POC_API_LOG_LEVEL:-info}
-      - POC_DB_PORT=${POC_DB_PORT:-5432}
+      - STITCH_API_KEY=${STITCH_API_KEY:-abc123}
+      - STITCH_API_PORT=${STITCH_API_PORT:-8000}
+      - STITCH_API_LOG_LEVEL=${STITCH_API_LOG_LEVEL:-info}
+      - STITCH_DB_PORT=${STITCH_DB_PORT:-5432}
       - PYTHONUNBUFFERED=1
     ports:
-      - "${POC_API_PORT:-8000}:${POC_API_PORT:-8000}"
+      - "${STITCH_API_PORT:-8000}:${STITCH_API_PORT:-8000}"
   db:
     image: postgres:16
     restart: always
@@ -18,10 +18,10 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: poc
-      POC_DB_PORT: ${POC_DB_PORT:-5432}
+      STITCH_DB_PORT: ${STITCH_DB_PORT:-5432}
     ports:
-      - "${POC_DB_PORT:-5432}:${POC_DB_PORT:-5432}"
-    command: -p ${POC_DB_PORT:-5432}
+      - "${STITCH_DB_PORT:-5432}:${STITCH_DB_PORT:-5432}"
+    command: -p ${STITCH_DB_PORT:-5432}
     volumes:
       - ./database/init:/docker-entrypoint-initdb.d
       - postgres_data:/var/lib/postgresql/data
