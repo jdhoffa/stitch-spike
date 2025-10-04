@@ -5,10 +5,10 @@ from dotenv import load_dotenv
 
 # import .env settings
 load_dotenv()
-POC_DB_PORT = getenv("POC_DB_PORT", "5432")
+STITCH_DB_PORT = getenv("STITCH_DB_PORT", "5432")
 
 # Define database connection string
-DATABASE_URL = "postgresql://postgres:postgres@db:" + POC_DB_PORT + "/poc"
+DATABASE_URL = "postgresql://postgres:postgres@db:" + STITCH_DB_PORT + "/poc"
 # Set up SQLAlchemy engine and session
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

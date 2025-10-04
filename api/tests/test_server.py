@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
-from web_api_poc import create_app
-from web_api_poc.services.auth import get_api_key
+from stitch_spike import create_app
+from stitch_spike.services.auth import get_api_key
 
 app = create_app(title="foo", description="bar", version="baz")
 
